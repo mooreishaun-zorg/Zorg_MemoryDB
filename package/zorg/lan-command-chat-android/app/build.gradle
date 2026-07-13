@@ -1,0 +1,25 @@
+plugins {
+    id "com.android.application"
+}
+
+def defaultProfileName = providers.gradleProperty("LAN_CHAT_DEFAULT_NAME").orElse("LAN Command Chat")
+def defaultProfileUrl = providers.gradleProperty("LAN_CHAT_DEFAULT_URL").orElse("https://lan-command-chat.zorg.local/chat")
+
+android {
+    namespace "ai.zorg.lancommandchat"
+    compileSdk 35
+
+    buildFeatures {
+        buildConfig true
+    }
+
+    defaultConfig {
+        applicationId "ai.zorg.lancommandchat"
+        minSdk 26
+        targetSdk 35
+        versionCode 9
+        versionName "2.0.9"
+        buildConfigField "String", "DEFAULT_PROFILE_NAME", "\"${defaultProfileName.get().replace("\\", "\\\\").replace("\"", "\\\"")}\""
+        buildConfigField "String", "DEFAULT_PROFILE_URL", "\"${defaultProfileUrl.get().replace("\\", "\\\\").replace("\"", "\\\"")}\""
+    }
+}

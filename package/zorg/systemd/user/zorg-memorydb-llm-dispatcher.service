@@ -1,0 +1,16 @@
+[Unit]
+Description=Zorg MemoryDB LLM scheduled-job dispatcher
+After=default.target
+
+[Service]
+Type=simple
+Environment=OPENCLAW_WORKSPACE=%h/.openclaw/workspace
+Environment=SQL_MEMORY_MAP=%h/.openclaw/workspace/sql_memory_map.json
+Environment=OPENCLAW_BIN=%h/.npm-global/bin/openclaw
+WorkingDirectory=%h/.openclaw/workspace
+ExecStart=%h/.openclaw/workspace/.venv-sqlmem/bin/python %h/.openclaw/workspace/skills/zorg-db-memory/scripts/memory_db_llm_dispatcher.py
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=default.target

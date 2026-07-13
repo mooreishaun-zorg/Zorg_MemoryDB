@@ -1,0 +1,15 @@
+node_modules/
+.next/
+dist/
+tmp/
+*.tmp
+*.log
+*.env
+.env
+sql_memory_map.json
+*.dump
+*.backup
+*.tar
+*.tar.gz
+artifacts/
+browser-profile/

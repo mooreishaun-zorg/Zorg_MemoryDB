@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Memory Brain 3D</title>
+    <script>
+      {
+        const embed = new URLSearchParams(location.search).get("embed");
+        if (embed && embed !== "0") document.documentElement.dataset.embed = "true";
+      }
+    </script>
+    <link rel="stylesheet" href="styles.css?v=embed-mode-20260709" />
+  </head>
+  <body>
+    <main class="shell">
+      <section id="graph"></section>
+      <aside class="panel" aria-label="Memory DB controls">
+        <header>
+          <p id="memoryDbName" class="eyebrow">Memory DB</p>
+          <h1 id="memoryStatusTitle">Memory Brain Status</h1>
+        </header>
+
+        <div class="panel-actions" aria-label="Map navigation and view controls">
+          <button id="themeToggle" class="theme-toggle" type="button" aria-pressed="false">Light View</button>
+          <a class="panel-admin-link" href="/admin">Admin</a>
+        </div>
+
+        <section class="panel-engine-counts" aria-label="Current history window display counts">
+          <div class="engine-counts">
+            <span class="engine-count-item" data-engine-count="nodesDisplayed">
+              <span>Nodes shown</span>
+              <strong>--</strong>
+            </span>
+            <span class="engine-count-item" data-engine-count="vectorsDisplayed">
+              <span>Vectors shown</span>
+              <strong>--</strong>
+            </span>
+            <span class="engine-count-item" data-engine-count="nodesRemaining">
+              <span>Nodes remaining</span>
+              <strong>--</strong>
+            </span>
+            <span class="engine-count-item" data-engine-count="vectorsRemaining">
+              <span>Vectors remaining</span>
+              <strong>--</strong>
+            </span>
+          </div>
+        </section>
+
+        <section class="details">
+          <h2>Selected Node</h2>
+          <div id="details" class="node-details">Click a node to inspect it.</div>
+        </section>
+      </aside>
+    </main>
+
+    <script src="vendor/3d-force-graph/3d-force-graph.min.js"></script>
+    <script type="module" src="app.js?v=embed-mode-20260709"></script>
+  </body>
+</html>

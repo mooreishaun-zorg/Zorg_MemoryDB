@@ -1,0 +1,21 @@
+{
+  "name": "zorg-db-memory",
+  "version": "2.0.11",
+  "private": false,
+  "description": "PostgreSQL-backed Zorg MemoryDB skill and support package for OpenClaw installs.",
+  "license": "MIT",
+  "type": "module",
+  "files": [
+    "skills/zorg-db-memory",
+    "package/zorg",
+    "docs",
+    "release",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "verify": "bash scripts/verify-public-package.sh",
+    "pack:zorg": "bash scripts/package-zorg-db-memory.sh"
+  }
+}
